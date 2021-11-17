@@ -7,9 +7,13 @@
   alert(admin);
 }
 
+
 // 2. Array: Complete the method which accepts such an array, and returns that single different number (length >= 3)
 // [1, 1, 2] ==> 2
 // [17, 17, 3, 17, 17, 17, 17] ==> 3
+let array = [17, 17, 3, 17, 17, 17, 17];
+let result = +array.filter(item => array.indexOf(item) === array.lastIndexOf(item)).join('');
+console.log(result);
 
 
 // 3. Array: Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
