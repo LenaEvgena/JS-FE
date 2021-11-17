@@ -4,16 +4,18 @@
   let admin, name;
   name = 'John';
   admin = name;
-  alert(admin);
+  // alert(admin);
 }
 
 
 // 2. Array: Complete the method which accepts such an array, and returns that single different number (length >= 3)
 // [1, 1, 2] ==> 2
 // [17, 17, 3, 17, 17, 17, 17] ==> 3
-let array = [17, 17, 3, 17, 17, 17, 17];
-let result = +array.filter(item => array.indexOf(item) === array.lastIndexOf(item)).join('');
-console.log(result);
+{
+  let array = [17, 17, 3, 17, 17, 17, 17];
+  let result = +array.filter(item => array.indexOf(item) === array.lastIndexOf(item)).join('');
+  // console.log(result);
+}
 
 
 // 3. Array: Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
@@ -27,6 +29,15 @@ console.log(result);
 //>>>>> 4
 // deepCount([1, 2, [3, 4, [5]]]);
 //>>>>> 7
+function deepCount(arr) {
+  let count = arr.length;
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      count += deepCount(arr[i]);
+    }
+  }
+  return count;
+}
 
 
 // 5. Array: The new "Avengers" movie has just been released! There are a lot of people at the cinema box office standing in a huge line. Each of them has a single 100, 50 or 25 dollar bill. An "Avengers" ticket costs 25 dollars. Vasya is currently working as a clerk. He wants to sell a ticket to every single person in this line. Can Vasya sell a ticket to every person and give change if he initially has no money and sells the tickets strictly in the order people queue?
