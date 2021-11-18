@@ -58,11 +58,10 @@
 
 
 // 5. Array: The new "Avengers" movie has just been released! There are a lot of people at the cinema box office standing in a huge line. Each of them has a single 100, 50 or 25 dollar bill. An "Avengers" ticket costs 25 dollars. Vasya is currently working as a clerk. He wants to sell a ticket to every single person in this line. Can Vasya sell a ticket to every person and give change if he initially has no money and sells the tickets strictly in the order people queue?
-// Line.Tickets(new int[] {25, 25, 50}) // => YES
-// Line.Tickets(new int[] {25, 100}) // => NO. Vasya will not have enough money to give change to 100 dollars
-// Line.Tickets(new int[] {25, 25, 50, 50, 100}) // => NO. Vasya will not have the right bills to give 75 dollars of change (you can't make two bills of 25 from one of 50)
+// Line.Tickets([25, 25, 50]) // => YES
+// Line.Tickets([25, 100]) // => NO. Vasya will not have enough money to give change to 100 dollars
+// Line.Tickets([25, 25, 50, 50, 100]) // => NO. Vasya will not have the right bills to give 75 dollars of change (you can't make two bills of 25 from one of 50)
 {
-  // let it be an array of tickets
   let array = [25, 25, 50];
   let array1 = [25, 100];
   let array2 = [25, 25, 50, 50, 100];
@@ -116,7 +115,7 @@
   let i = 0;
 
   while (i < 3) {
-    alert( `number ${i}!` );
+    // alert( `number ${i}!` );
     i++;
   }
 }
@@ -124,7 +123,12 @@
 
 // 8. Write a loop which prompts for a number greater than 100. If the visitor enters another number – ask them to input again.The loop must ask for a number until either the visitor enters a number greater than 100 or cancels the input/enters an empty line.
 {
+  let num;
 
+  do {
+    num = prompt( 'Enter a number greater than 100...', 0);
+  }
+  while (num <= 100 && num);
 }
 
 
