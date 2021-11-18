@@ -99,21 +99,37 @@
 
 
 // 6. Write an if condition to check that age is NOT between 14 and 90 inclusively.
+{
+  let age;
+
+  if (age < 14 || age > 90) {
+    console.log('Age is NOT between 14 and 90 inclusively!');
+  }
+}
 
 
 // 7. Rewrite the code changing the for loop to while without altering its behavior (the output should stay same).
 // for (let i = 0; i < 3; i++) {
 //   alert( `number ${i}!` );
 // }
+{
+
+}
 
 
 // 8. Write a loop which prompts for a number greater than 100. If the visitor enters another number – ask them to input again.The loop must ask for a number until either the visitor enters a number greater than 100 or cancels the input/enters an empty line.
+{
+
+}
 
 
 // 9. Write a function min(a,b) which returns the least of two numbers a and b:
 // min(2, 5) == 2
 // min(3, -1) == -1
 // min(1, 1) == 1
+{
+
+}
 
 
 // 10. Rewrite the function using '?' and '||'.
@@ -124,3 +140,6 @@
 //         return confirm('Did parents allow you?');
 //     }
 // }
+{
+
+}
