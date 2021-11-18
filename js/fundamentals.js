@@ -25,12 +25,13 @@
 // 3. Array: Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
 // createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
 {
+  let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
   function createPhoneNumber(arr) {
     let strArr = arr.join('');
     return `(${strArr.substr(0, 3)}) ${strArr.substr(3, 3)}-${strArr.substr(6)}`;
   }
 
-  let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   createPhoneNumber(array);
 }
 
@@ -41,14 +42,18 @@
 //>>>>> 4
 // deepCount([1, 2, [3, 4, [5]]]);
 //>>>>> 7
-function deepCount(arr) {
-  let count = arr.length;
-  for (let i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i])) {
-      count += deepCount(arr[i]);
+{
+  function deepCount(arr) {
+    let count = arr.length;
+    for (let i = 0; i < arr.length; i++) {
+      if (Array.isArray(arr[i])) {
+        count += deepCount(arr[i]);
+      }
     }
+    return count;
   }
-  return count;
+
+  deepCount([1, 2, [3, 4, [5]]]);
 }
 
 
@@ -56,6 +61,41 @@ function deepCount(arr) {
 // Line.Tickets(new int[] {25, 25, 50}) // => YES
 // Line.Tickets(new int[] {25, 100}) // => NO. Vasya will not have enough money to give change to 100 dollars
 // Line.Tickets(new int[] {25, 25, 50, 50, 100}) // => NO. Vasya will not have the right bills to give 75 dollars of change (you can't make two bills of 25 from one of 50)
+{
+  // let it be an array of tickets
+  let array = [25, 25, 50];
+  let array1 = [25, 100];
+  let array2 = [25, 25, 50, 50, 100];
+
+  function giveChange(peopleArr) {
+    let $25 = 0;
+    let $50 = 0;
+    let $100 = 0;
+
+    for(let i = 0; i < peopleArr.length; i++) {
+      if (peopleArr[i] === 25) {
+        $25++;
+      }
+      if (peopleArr[i] === 50) {
+        $50++;
+        $25--;
+      }
+      if (peopleArr[i] === 100) {
+        $100++;
+        $50--;
+        $25--;
+      }
+    }
+
+    if ($25 < 0 || $50 < 0 || $100 < 0) {
+      return 'NO';
+    }
+
+    return 'YES';
+  }
+
+  giveChange(array);
+}
 
 
 // 6. Write an if condition to check that age is NOT between 14 and 90 inclusively.
