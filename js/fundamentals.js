@@ -4,7 +4,7 @@
   let admin, name;
   name = 'John';
   admin = name;
-  // alert(admin);
+  alert(admin);
 }
 
 
@@ -115,7 +115,7 @@
   let i = 0;
 
   while (i < 3) {
-    // alert( `number ${i}!` );
+    alert( `number ${i}!` );
     i++;
   }
 }
@@ -154,5 +154,11 @@
 //     }
 // }
 {
+  function checkAge(age) {
+    return (age > 18) ? true : confirm('Did parents allow you?');
+  }
 
+  function checkAge(age) {
+    return (age > 18) || confirm('Did parents allow you?');
+  }
 }
