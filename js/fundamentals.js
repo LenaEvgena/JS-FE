@@ -13,8 +13,12 @@
 // [17, 17, 3, 17, 17, 17, 17] ==> 3
 {
   let array = [17, 17, 3, 17, 17, 17, 17];
-  let result = +array.filter(item => array.indexOf(item) === array.lastIndexOf(item)).join('');
-  // console.log(result);
+
+  function getSingleNum(arr) {
+    return +arr.filter(item => arr.indexOf(item) === arr.lastIndexOf(item)).join('');
+  }
+
+  getSingleNum(array);
 }
 
 
