@@ -66,7 +66,7 @@
   let array1 = [25, 100];
   let array2 = [25, 25, 50, 50, 100];
 
-  function giveChange(peopleArr) {
+  function tickets(peopleArr) {
     let $25 = 0;
     let $50 = 0;
     let $100 = 0;
@@ -93,7 +93,7 @@
     return 'YES';
   }
 
-  giveChange(array);
+  tickets(array);
 }
 
 
