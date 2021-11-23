@@ -4,6 +4,22 @@
 // runningAverage(11); //Outputs 10.5
 // runningAverage(12); //Outputs 11
 
+function getAverage() {
+  let avg = 0;
+  let count = 0;
+
+  return function(x) {
+    count++;
+    avg += x;
+    return avg / count;
+  }
+}
+
+let runningAverage = getAverage();
+
+runningAverage(10);
+runningAverage(11);
+runningAverage(12);
 
 // 2. Write a sum() function which will work properly when invoked using syntax below:
 // sum(2,3); // Outputs 5
