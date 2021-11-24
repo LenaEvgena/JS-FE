@@ -25,6 +25,27 @@ runningAverage(12);
 // sum(2,3); // Outputs 5
 // sum(2)(3); // Outputs 5
 // sum(1)(2)(3)(4); // Outputs 10
+function sum(a, b) {
+  if (b) {
+    return a + b;
+  }
+
+  let result = a;
+  function f(b) {
+    result += b;
+    return f;
+  }
+
+  f.valueOf = () => { //создаем метод, по кот. возвращаемый объект будет пребразовываться в примитив(число в нашем случае)
+    // console.log(result);
+    return result;
+  }
+
+  return f; //возвращаем функцию, кот. возвращает код функции.
+}
+sum(2,3);
++sum(2)(3); // + неявно преобразовывает в число либо вызов sum(2)(3).valueOf()
++sum(1)(2)(3)(4); //  + неявно преобразовывает в число либо вызов sum(1)(2)(3)(4).valueOf()
 
 
 // 3. Create a function NamedOne() which takes first & last names as parameters and returns an object with firstName, lastName and fullName. If .firstName or .lastName are changed, then .fullName should also be changed. If .fullName is changed, then .firstName and .lastName should also be changed. Note: "input format" to .fullName will be firstName + space + lastName. If given fullName isn't valid then no property is changed.
