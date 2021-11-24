@@ -64,3 +64,31 @@ sum(2,3);
 // namedOne.fullName = "Tom" // -> no: lastName missing
 // namedOne.fullName = "TomDonnovan" // -> no: no space between first & last names
 // namedOne.fullName // -> "Bill Smith" (unchanged)
+
+class NamedOne {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  set fullName(fullName) {
+    let full = fullName.split(' ');
+    if (full.length === 2) {
+      return [this.firstName, this.lastName] = full;
+    }
+  }
+}
+
+let	namedOne = new NamedOne("Naomi","Wang");
+
+namedOne.firstName = "John";
+namedOne.lastName = "Doe";
+namedOne.fullName = "TomDonnovan";
+
+console.log(namedOne.firstName);
+console.log(namedOne.lastName);
+console.log(namedOne.fullName);
