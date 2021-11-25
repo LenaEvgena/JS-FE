@@ -14,7 +14,7 @@ class Vector {
 
   add(array2) {
     if (this.value.length !== array2.value.length) {
-      throw new Error;
+      throw new Error('Wrong array\'s length!');
     }
 
     let result = [];
@@ -27,7 +27,7 @@ class Vector {
 
   subtract(array2) {
     if (this.value.length !== array2.value.length) {
-      throw new Error;
+      throw new Error('Wrong array\'s length!');
     }
 
     let result = [];
@@ -40,7 +40,7 @@ class Vector {
 
   dot(array2) {
     if (this.value.length !== array2.value.length) {
-      throw new Error;
+      throw new Error('Wrong array\'s length!');
     }
 
     let result = 0;
@@ -79,6 +79,11 @@ class Vector {
   }
 }
 
+var a = new Vector([1, 2, 3]);
+var b = new Vector([3, 4, 5]);
+var c = new Vector([5, 6, 7, 8]);
+a.dot(b);
+a.equals(b);
 
 // 2. Write a myNew function that replicates all the behavior of the new operator. This function should take one function parameter (the constructor), plus an unknown number of additional parameters of any type (arguments for the constructor). When invoked, myNew should do everything new does and return the same object new would evaluate to, as specified below:
 // var john = myNew(Person, 'John', 30); // should work the same as:
