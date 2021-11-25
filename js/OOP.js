@@ -7,6 +7,77 @@
 // a.dot(b); // should return 1*3 + 2*4 + 3*5 = 26
 // a.norm(); // should return sqrt(1^2 + 2^2 + 3^2) = sqrt(14)
 // a.add(c); // throws an error
+class Vector {
+  constructor(array1) {
+    this.value = array1;
+  }
+
+  add(array2) {
+    if (this.value.length !== array2.value.length) {
+      throw new Error;
+    }
+
+    let result = [];
+    for (let i = 0; i < this.value.length; i++) {
+      result[i] = this.value[i] + array2.value[i];
+    }
+
+    return new Vector(result);
+  }
+
+  subtract(array2) {
+    if (this.value.length !== array2.value.length) {
+      throw new Error;
+    }
+
+    let result = [];
+    for (let i = 0; i < this.value.length; i++) {
+      result[i] = this.value[i] - array2.value[i];
+    }
+
+    return new Vector(result);
+  }
+
+  dot(array2) {
+    if (this.value.length !== array2.value.length) {
+      throw new Error;
+    }
+
+    let result = 0;
+    for (let i = 0; i < this.value.length; i++) {
+      result += this.value[i] * array2.value[i];
+    }
+
+    return result;
+  }
+
+  norm() {
+    let result = 0;
+    for (let i = 0; i < this.value.length; i++) {
+      result += this.value[i] ** 2;
+    }
+
+    return Math.sqrt(result);
+  }
+
+  toString() {
+    return `(${this.value.join(',')})`;
+  }
+
+  equals(array2) {
+    if (this.value.length !== array2.value.length) {
+      return false;
+    }
+
+    for (let i = 0; i < this.value.length; i++) {
+      if (this.value[i] === array2.value[i]) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+}
 
 
 // 2. Write a myNew function that replicates all the behavior of the new operator. This function should take one function parameter (the constructor), plus an unknown number of additional parameters of any type (arguments for the constructor). When invoked, myNew should do everything new does and return the same object new would evaluate to, as specified below:
