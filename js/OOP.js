@@ -110,13 +110,11 @@ function myNew(Constructor, ...args) {
   const instance = Object.create(Constructor.prototype);//новый объект, задали прототип с методами и свойством constructor
   const result = instance.constructor(...args); //Мы можем использовать свойство constructor существующего объекта для создания нового с параметрами.
 
-
-  if (typeof result === 'object') { //если это объект - возвращаем этот объект явно
+  if (typeof result === 'object') { //если это объект(создан от объекта) - возвращаем этот объект явно
     return result;
-  } else {
-    return instance;
   }
 
+  return instance;
 }
 
 let pete = myNew(Person, 'Pete', 30);
