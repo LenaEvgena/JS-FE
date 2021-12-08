@@ -3,13 +3,14 @@
 // let promise = new MyPromise((resolve) => {
 //     console.log(1);
 //     resolve();
-// }).synchThen(()	=> {
+// }).synchThen(() => {
 //     console.log(2);
 // }).then(() => {
 //     console.log(3);
 // })
 // console.log(4);
 // //1, 2, 4, 3
+
 class MyPromise {
   constructor(fn) {
     this.promise = new Promise(fn); //новый промис с переданным коллбэком
@@ -33,7 +34,7 @@ let promise = new MyPromise((resolve) => {
 }).then(() => {
   console.log(3);
 })
-console.log(4);
+console.log(4); // 1, 2, 4, 3
 
 
 // 2. Write ReversePromise class so that ‘then’ functions are calling from the end to the start
@@ -46,3 +47,28 @@ console.log(4);
 // .then(() => console.log(3))
 // .then(() => console.log(4))
 // //1, 4, 3, 2
+
+class ReversePromise {
+  constructor(fn) {
+    this.promise = new Promise(fn);
+    this.results = [];
+  }
+  then(fn) {
+    this.results.push(fn);
+    return this; //возвращаем this для чейнинга
+  }
+  log() {
+    this.results.reverse();
+    for (let item of this.results) {
+      item();
+    }
+  }
+}
+
+let promise1 = new ReversePromise((resolve) => {
+    console.log(1);
+    resolve();
+  })
+  .then(() => console.log(2))
+  .then(() => console.log(3))
+  .then(() => console.log(4)).log(); // 1, 4, 3, 2
