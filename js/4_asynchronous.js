@@ -12,7 +12,7 @@
 // //1, 2, 4, 3
 class MyPromise {
   constructor(fn) {
-    this.promise = new Promise(fn); //возвращаем новый промис с переданным коллбэком
+    this.promise = new Promise(fn); //новый промис с переданным коллбэком
   }
   then(fn) {
     this.promise.then(fn); //используем метод then для промиса с переданным коллбэком (ставит в очередь микрозадач)
