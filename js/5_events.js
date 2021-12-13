@@ -24,11 +24,12 @@ document.querySelector('.wrapper').appendChild( createTable(100, 100) );
 
 // add event listeners to each cell
 let cells = Array.from(document.querySelectorAll('td'));
-// cells.forEach(cell => {
-//   cell.addEventListener('click', () => {
-//     console.log(`${cell.textContent} cell clicked!`);
-//   });
-// })
+cells.forEach(cell => {
+  cell.addEventListener('click', () => {
+    console.log(`${cell.textContent} cell clicked!`);
+  });
+})
+// + исключает необходимость обработки клика вне ячейки
 /* за 5 сек
 130 ms Scripting
 202 ms Rendering
@@ -49,6 +50,11 @@ let table = document.querySelector('table');
 table.addEventListener('click', (e) => {
   console.log(`${e.target.textContent} cell of the table clicked!`);
 });
+// + меньше строк кода
+// + не нужно вешать много обработчиков
+// + можно динамически изменять количество ячеек и все они все равно будут с обработчиками
+// - не исключает необходимость обработки клика вне ячейки
+
 /* за 5 сек
 126 ms Scripting
 201 ms Rendering
