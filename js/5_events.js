@@ -8,10 +8,12 @@ function createTable(rows, cells) {
     for (let j = 0; j < cells; ++j) {
       let td = document.createElement('td');
       td.style.border = '1px solid black';
+      td.style.textAlign = 'center';
       td.style.minWidth = '50px';
       td.style.height = '30px';
+      td.style.cursor = 'pointer';
       row.appendChild(td);
-      // row.cells[j].appendChild(document.createTextNode((i + 1) + '/' + (j + 1)));
+      row.cells[j].appendChild(document.createTextNode((i + 1) + ':' + (j + 1)));
     }
     table.appendChild(row);
   }
@@ -20,6 +22,13 @@ function createTable(rows, cells) {
 
 document.querySelector('.wrapper').appendChild( createTable(100, 100) );
 
+// add event listeners to each cell
+let cell = Array.from(document.querySelectorAll('td'));
+cell.forEach(cell => {
+  cell.addEventListener('click', (e) => {
+    console.log(`${e.target.textContent} cell clicked!`);
+  });
+})
 
 
 // 2. Apply drag&drop functionality to each cell.
