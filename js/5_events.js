@@ -77,7 +77,6 @@ cells.forEach(cell => {
   cell.setAttribute('draggable', 'true');
 
   cell.addEventListener('dragstart', (e) => {
-    e.preventDefault();
     e.dataTransfer.setData('id', e.target.id);
     // console.log(e);
   });
