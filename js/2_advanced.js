@@ -83,7 +83,7 @@ function NamedOne(firstName, lastName) {
   });
 }
 
-let	namedOne = new NamedOne("Naomi","Wang");
+let namedOne = new NamedOne("Naomi","Wang");
 
 namedOne.firstName = "John";
 namedOne.lastName = "Doe";
