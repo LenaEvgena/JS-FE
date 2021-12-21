@@ -77,8 +77,8 @@ function NamedOne(firstName, lastName) {
     set(fullName) {
       let full = fullName.split(' ');
       if (full.length === 2) {
-      return [this.firstName, this.lastName] = full;
-    }
+        [this.firstName, this.lastName] = full;
+      }
     }
   });
 }
