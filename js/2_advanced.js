@@ -11,7 +11,7 @@ function getAverage() {
   return function(x) {
     count++;
     avg += x;
-    return avg / count;
+    return Number((avg / count).toFixed(2));
   }
 }
 
