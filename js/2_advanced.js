@@ -26,7 +26,7 @@ runningAverage(12);
 // sum(2)(3); // Outputs 5
 // sum(1)(2)(3)(4); // Outputs 10
 function sum(a, b) {
-  if (b) {
+  if (b !== undefined) {
     return a + b;
   }
 
