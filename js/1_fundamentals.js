@@ -86,7 +86,7 @@
       }
     }
 
-    if ($25 < 0 || $50 < 0 || $100 < 0) {
+    if ($25 < 0 || $50 < 0) {
       return 'NO';
     }
 
@@ -128,7 +128,7 @@
   do {
     num = prompt( 'Enter a number greater than 100...', 0);
   }
-  while (num <= 100 && num);
+  while (num && num <= 100);
 }
 
 
