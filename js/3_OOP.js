@@ -62,11 +62,11 @@ a.equals(b);
 //Note: use the code below for your task:
 function Person(name, age) {
   this.name = name;
-	this.age = age;
+  this.age = age;
 }
 
 Person.prototype.introduce = function(){
-    return 'My name is ' + this.name + ' and I am ' + this.age;
+  return 'My name is ' + this.name + ' and I am ' + this.age;
 };
 
 var john = new Person('John', 30);
