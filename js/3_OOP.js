@@ -17,12 +17,7 @@ class Vector {
       throw new Error('Wrong array\'s length!');
     }
 
-    let result = [];
-    for (let i = 0; i < this.value.length; i++) {
-      result[i] = this.value[i] + array2.value[i];
-    }
-
-    return new Vector(result);
+    return new Vector(this.value.map((val, index) => val + arr2[index]));
   }
 
   subtract(array2) {
@@ -30,12 +25,7 @@ class Vector {
       throw new Error('Wrong array\'s length!');
     }
 
-    let result = [];
-    for (let i = 0; i < this.value.length; i++) {
-      result[i] = this.value[i] - array2.value[i];
-    }
-
-    return new Vector(result);
+    return new Vector(this.value.map((val, index) => val - arr2[index]));
   }
 
   dot(array2) {
