@@ -17,7 +17,7 @@ class Vector {
       throw new Error('Wrong array\'s length!');
     }
 
-    return new Vector(this.value.map((val, index) => val + array2[index]));
+    return new Vector(this.value.map((val, index) => val + array2.value[index]));
   }
 
   subtract(array2) {
@@ -25,7 +25,7 @@ class Vector {
       throw new Error('Wrong array\'s length!');
     }
 
-    return new Vector(this.value.map((val, index) => val - array2[index]));
+    return new Vector(this.value.map((val, index) => val - array2.value[index]));
   }
 
   dot(array2) {
@@ -33,7 +33,7 @@ class Vector {
       throw new Error('Wrong array\'s length!');
     }
 
-    return this.value.reduce((acc, val, index) => acc + val * array2[index], 0);
+    return this.value.reduce((acc, val, index) => acc + val * array2.value[index], 0);
   }
 
   norm() {
