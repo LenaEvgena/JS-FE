@@ -65,17 +65,7 @@ class Vector {
   }
 
   equals(array2) {
-    if (this.value.length !== array2.value.length) {
-      return false;
-    }
-
-    for (let i = 0; i < this.value.length; i++) {
-      if (this.value[i] === array2.value[i]) {
-        return true;
-      }
-    }
-
-    return false;
+    return this.toString() === array2.toString();
   }
 }
 
