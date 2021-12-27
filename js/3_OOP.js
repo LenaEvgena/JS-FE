@@ -33,12 +33,7 @@ class Vector {
       throw new Error('Wrong array\'s length!');
     }
 
-    let result = 0;
-    for (let i = 0; i < this.value.length; i++) {
-      result += this.value[i] * array2.value[i];
-    }
-
-    return result;
+    return this.value.reduce((acc, val, index) => acc + val * array2[index], 0);
   }
 
   norm() {
